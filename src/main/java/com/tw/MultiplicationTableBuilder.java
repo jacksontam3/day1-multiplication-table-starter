@@ -19,6 +19,10 @@ public class MultiplicationTableBuilder {
         return start > 1 && end <= 1000;
     }
 
+    public boolean isValid(int start, int end) {
+        return isInputStartSmallerThanOrEqualEnd(start, end) && isInputBetween1To1000Inclusive(start, end);
+    }
+
     public String build(int start, int end) {
         return "";
     }
