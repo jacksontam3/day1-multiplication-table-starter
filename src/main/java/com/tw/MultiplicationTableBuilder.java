@@ -11,6 +11,10 @@ public class MultiplicationTableBuilder {
         System.out.println(multiplicationTable);
     }
 
+    public boolean isInputStartSmallerThanOrEqualEnd(int start, int end) {
+        return start <= end;
+    }
+
     public String build(int start, int end) {
         return "";
     }
