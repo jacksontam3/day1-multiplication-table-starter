@@ -40,6 +40,11 @@ public class MultiplicationTableBuilder {
     }
 
     public String build(int start, int end) {
-        return "";
+        if (!isValid(start, end)) {
+            return null;
+        }
+
+        return generateTable(start, end);
+
     }
 }
