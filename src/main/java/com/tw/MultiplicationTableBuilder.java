@@ -1,5 +1,7 @@
 package com.tw;
 
+import java.util.stream.IntStream;
+
 public class MultiplicationTableBuilder {
 
     public static void main(String[] args) {
@@ -21,6 +23,20 @@ public class MultiplicationTableBuilder {
 
     public boolean isValid(int start, int end) {
         return isInputStartSmallerThanOrEqualEnd(start, end) && isInputBetween1To1000Inclusive(start, end);
+    }
+
+    public String generateTable(int start, int end) {
+        StringBuilder multiplicationTable = new StringBuilder();
+        IntStream.rangeClosed(start, end).forEach(i -> {
+            IntStream.rangeClosed(start, i).forEach(j -> {
+                multiplicationTable.append(j).append("*").append(i).append("=").append(i * j);
+                if (j != i) {
+                    multiplicationTable.append(" ");
+                }
+            });
+            multiplicationTable.append(System.lineSeparator());
+        });
+        return multiplicationTable.toString();
     }
 
     public String build(int start, int end) {
