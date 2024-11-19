@@ -18,7 +18,7 @@ public class MultiplicationTableBuilder {
     }
 
     public boolean isInputBetween1To1000Inclusive(int start, int end) {
-        return start > 1 && end <= 1000;
+        return start > 1 && start <= 1000 && end > 1 && end <= 1000;
     }
 
     public boolean isValid(int start, int end) {
